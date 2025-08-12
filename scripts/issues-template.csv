@@ -1,0 +1,4 @@
+title,body,labels,assignees,milestone,project_owner,project_number,state,close_reason
+Example issue one,This is the body of issue one,"bug;help wanted",octocat;hubot,Milestone 1,my-org,1,open,
+Example closed,Will be closed immediately,question,,Release 2025,, ,closed,completed
+Minimal required only,,, ,,,open,
