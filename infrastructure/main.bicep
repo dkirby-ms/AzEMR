@@ -24,7 +24,7 @@ param allowPublicAccess bool = false
 param vnetCidr string = '10.0.0.0/16'
 
 @description('Container Apps subnet CIDR')
-param containerAppsSubnetCidr string = '10.0.1.0/23'
+param containerAppsSubnetCidr string = '10.0.4.0/23'
 
 @description('MySQL subnet CIDR')
 param mysqlSubnetCidr string = '10.0.2.0/24'
