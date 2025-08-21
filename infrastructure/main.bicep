@@ -24,7 +24,7 @@ param allowPublicAccess bool = false
 param vnetCidr string = '10.0.0.0/16'
 
 @description('Container Apps subnet CIDR')
-param containerAppsSubnetCidr string = '10.0.1.0/16'
+param containerAppsSubnetCidr string = '10.0.1.0/23'
 
 @description('MySQL subnet CIDR')
 param mysqlSubnetCidr string = '10.0.2.0/24'
@@ -40,7 +40,7 @@ var uniqueSuffix = uniqueString(resourceGroup().id)
 var containerAppEnvName = '${namePrefix}-env-${environment}-${uniqueSuffix}'
 var containerAppName = '${namePrefix}-app-${environment}-${uniqueSuffix}'
 var mysqlServerName = '${namePrefix}-mysql-${environment}-${uniqueSuffix}'
-var logAnalyticsName = '${namePrefix}-logs-${environment}-${uniqueSuffix}'
+var logAnalyticsName = '${namePrefix}-logs-${environment}-${uniqueSuffix}'az 
 var appInsightsName = '${namePrefix}-insights-${environment}-${uniqueSuffix}'
 var vnetName = '${namePrefix}-vnet-${environment}-${uniqueSuffix}'
 var mysqlDatabaseName = 'openemr'
@@ -375,6 +375,10 @@ resource openEmrContainerApp 'Microsoft.App/containerApps@2025-01-01' = {
     Environment: environment
     Application: 'OpenEMR'
   }
+
+  dependsOn: [
+    mysqlDatabase
+  ]
 }
 
 // Outputs
