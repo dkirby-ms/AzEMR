@@ -24,10 +24,10 @@ param allowPublicAccess bool = false
 param vnetCidr string = '10.0.0.0/16'
 
 @description('Container Apps subnet CIDR')
-param containerAppsSubnetCidr string = '10.0.4.0/23'
+param containerAppsSubnetCidr string = '10.0.0.0/23'
 
 @description('MySQL subnet CIDR')
-param mysqlSubnetCidr string = '10.0.2.0/24'
+param mysqlSubnetCidr string = '10.0.3.0/24'
 
 @description('Enable zone redundancy')
 param enableZoneRedundancy bool = false
