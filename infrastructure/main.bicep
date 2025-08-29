@@ -99,14 +99,6 @@ resource vnet 'Microsoft.Network/virtualNetworks@2023-09-01' = {
         name: 'container-apps-subnet'
         properties: {
           addressPrefix: containerAppsSubnetCidr
-          delegations: [
-            {
-              name: 'Microsoft.App.environments'
-              properties: {
-                serviceName: 'Microsoft.App/environments'
-              }
-            }
-          ]
         }
       }
       {
